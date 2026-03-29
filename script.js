@@ -109,12 +109,12 @@ function generateQuote() {
     document.body.className = "";
     document.body.classList.add(selectedCategory);
 
-    /* 🎵 STOP SEMUA SOUND */
-    Object.values(sounds).forEach(s => {
-        s.pause();
-        s.currentTime = 0;
-    });
-    
+        /* 🎵 STOP SEMUA SOUND */
+        Object.values(sounds).forEach(s => {
+            s.pause();
+            s.currentTime = 0;
+        });
+
     /* 🎵 PLAY SOUND BARU */
     const sound = sounds[selectedCategory];
     if (sound) {
@@ -130,6 +130,31 @@ function generateQuote() {
         output.classList.remove("hide");
         output.classList.add("show");
     }, 200);
+
+    const title = document.getElementById("title");
+
+/* UBAH JUDUL */
+let titleText = "Quote Generator";
+
+switch (selectedCategory) {
+    case "motivasi":
+        titleText = "Quote Motivasi";
+        break;
+    case "santai":
+        titleText = "Quote Santai";
+        break;
+    case "lucu":
+        titleText = "Quote Lucu";
+        break;
+    case "deep":
+        titleText = "Quote Deep";
+        break;
+    case "chaos":
+        titleText = "Quote Chaotic 😈";
+        break;
+}
+
+title.innerText = titleText;
 }
 
 /* ENTER KEY */
@@ -138,4 +163,6 @@ document.getElementById("nameInput")
     if (e.key === "Enter") {
         generateQuote();
     }
+
+    
 });
