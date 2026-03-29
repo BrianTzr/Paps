@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Quote Generator</h1>
+
+    <input type="text" id="nameInput" placeholder="Masukkan nama..." />
+
+    <select id="category">
+        <option value="random">Random</option>
+        <option value="motivasi">Motivasi</option>
+        <option value="santai">Santai</option>
+        <option value="lucu">Lucu</option>
+        <option value="deep">Deep</option>
+        <option value="chaos">Chaos 😈</option>
+    </select>
+
+    <button onclick="generateQuote()">Generate</button>
+
+    <p id="output"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: background 0.6s ease;
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    background: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
+    width: 320px;
+
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+input, select {
+    width: 100%;
+    max-width: 260px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+/* BUTTON */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 114, 255, 0.6);
+}
+
+/* OUTPUT */
+#output {
+    margin-top: 20px;
+    font-size: 18px;
+    min-height: 40px;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hide {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* ========================= */
+/* 🎨 BACKGROUND ANIMATIONS */
+/* ========================= */
+
+/* 💪 MOTIVASI */
+body.motivasi {
+    background: linear-gradient(270deg, #1d976c, #93f9b9, #1d976c);
+    background-size: 600% 600%;
+    animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 🌊 SANTAI */
+body.santai::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px);
+    background-size: 50px 50px;
+    animation: bubbles 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes bubbles {
+    from { background-position: 0 0; }
+    to { background-position: 0 -200px; }
+}
+
+/* 😂 LUCU */
+body.lucu {
+    animation: funnyFlash 1.5s infinite;
+}    
+
+@keyframes funnyFlash {
+    0%   { background: linear-gradient(135deg, #ff0000, #ff9900); }
+    20%  { background: linear-gradient(135deg, #ffcc00, #33ff00); }
+    40%  { background: linear-gradient(135deg, #00ffff, #0066ff); }
+    60%  { background: linear-gradient(135deg, #cc00ff, #ff00cc); }
+    80%  { background: linear-gradient(135deg, #ff6600, #ffff00); }
+    100% { background: linear-gradient(135deg, #ff0000, #ff9900); }
+}
+
+@keyframes funnyBG {
+    0% { background: linear-gradient(135deg, #f7971e, #ffd200); }
+    100% { background: linear-gradient(135deg, #ff6a00, #ffcc00); }
+}
+
+/* 🌑 DEEP */
+body.deep {
+    background: #0f0f0f;
+    animation: deepPulse 4s infinite;
+}
+
+@keyframes deepPulse {
+    0% { box-shadow: inset 0 0 50px rgba(255,255,255,0.05); }
+    50% { box-shadow: inset 0 0 100px rgba(255,255,255,0.1); }
+    100% { box-shadow: inset 0 0 50px rgba(255,255,255,0.05); }
+}
+
+/* 😈 CHAOS */
+body.chaos {
+    animation: chaosShake 0.2s infinite;
+    color: #ff4d4d; /* 🔴 warna teks merah */
+    background: linear-gradient(135deg, #2b0000, #8b0000, #ff0000);
+
+
+}
+
+@keyframes chaosShake {
+    0% { transform: translate(2px, -2px); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, 2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0, 0); }
+}
+
+body.chaos::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,0,0,0.05);
+    animation: glitchFlash 0.3s infinite;
+}
+
+@keyframes glitchFlash {
+    0% { opacity: 0; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0; }
+}
+
+#output.show {
+    opacity: 1;
+}
